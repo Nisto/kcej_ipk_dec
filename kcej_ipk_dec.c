@@ -126,21 +126,21 @@ int main(int argc, char *argv[])
     uint32_t nameoff = 0;
 
     if (argc != 2) {
-        printf("Usage: %s module.ipk\n", argv[0]);
+        printf("Usage: %s <ipk>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
     ipkpath = abspath(argv[1]);
 
     if (!isfile(ipkpath)) {
-        printf("ERROR: Invalid path to module.ipk\n");
+        printf("ERROR: Invalid IPK path\n");
         exit(EXIT_FAILURE);
     }
 
     ipk = fopen(ipkpath, "rb");
 
     if (!ipk) {
-        printf("ERROR: Could not open module.ipk\n");
+        printf("ERROR: Could not open IPK file\n");
         exit(EXIT_FAILURE);
     }
 
